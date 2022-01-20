@@ -14,4 +14,9 @@ class Array
             raise "no block given"
         end
     end
+
+   def countByKey
+        group_by {|x| x[0]}.map {|x,y| [x,y.size]}
+   end
+
 end
