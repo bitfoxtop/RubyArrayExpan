@@ -7,7 +7,8 @@ The methods below are implemented, which are widely used in Apache Spark's RDD o
 1. reduceByKey
 2. mapValues
 3. countByKey
-4. fold
+4. groupByKey
+5. fold
 
 Please see their API guide: 
 https://spark.apache.org/docs/latest/rdd-programming-guide.html
@@ -21,6 +22,7 @@ Here is the ruby sample code:
     p li.mapValues {|s| s**2 }
     p li.reduceByKey {|x,y| x+y }
     p li.countByKey
+    p li.groupByKey
     p li.map {|x| x[1]}.fold(10) {|x,y| x+y}
 
 

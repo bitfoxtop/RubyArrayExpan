@@ -15,9 +15,13 @@ class Array
         end
     end
 
-   def countByKey
-       group_by {|x| x[0]}.map {|x,y| [x,y.size]}
-   end
+    def countByKey
+        group_by {|x| x[0]}.map {|x,y| [x,y.size]}
+    end
+
+    def groupByKey
+        group_by {|x| x[0]}
+    end
 
     def fold(a)
         if block_given?
