@@ -16,7 +16,14 @@ class Array
     end
 
    def countByKey
-        group_by {|x| x[0]}.map {|x,y| [x,y.size]}
+       group_by {|x| x[0]}.map {|x,y| [x,y.size]}
    end
 
+    def fold(a)
+        if block_given?
+            dup.unshift(a).reduce {|x,y| yield(x,y)}
+        else
+            raise "no block given"
+        end
+    end
 end
