@@ -23,6 +23,14 @@ class Array
         group_by {|x| x[0]}
     end
 
+    def sortByKey(ascending=true)
+        if ascending == false
+            sort {|x,y| y[0] <=> x[0]}
+        else
+            sort {|x,y| x[0] <=> y[0]}
+        end
+    end
+
     def fold(a)
         if block_given?
             dup.unshift(a).reduce {|x,y| yield(x,y)}
